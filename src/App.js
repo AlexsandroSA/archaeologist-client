@@ -1,9 +1,10 @@
 import React from 'react';
+import AppRouter from './AppRouter';
 import GlobalStyle from './App.styles';
 
 const App = () => (
     <>
-        <h1>archaeologist-client</h1>
+        <AppRouter />
         <GlobalStyle />
     </>
 );
