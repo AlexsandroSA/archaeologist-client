@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import webRouter from '../../router';
 import { createDiscovery } from '../../api/services/discoveries.service';
@@ -23,5 +24,12 @@ const DiscoveryCreate = ({ history }) => {
         </PublicTemplate>
     );
 };
+
+DiscoveryCreate.propTypes = {
+    history: PropTypes.shape({
+        push: PropTypes.func,
+    }).isRequired,
+};
+
 
 export default DiscoveryCreate;
