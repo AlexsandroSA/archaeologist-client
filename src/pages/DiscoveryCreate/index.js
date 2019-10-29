@@ -16,7 +16,7 @@ const DiscoveryCreate = ({ history }) => {
     }
 
     return (
-        <PublicTemplate showGoBack>
+        <PublicTemplate>
             <Box>
                 <Form onSubmit={onSubmit} />
             </Box>
