@@ -36,5 +36,7 @@ export const FeedbackMessage = styled.small`
     display: block;
     margin-top: 0.25rem;
     font-weight: 400;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
+    color: red;
+    text-align: right;
 `;

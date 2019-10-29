@@ -1,9 +1,13 @@
 import { combineReducers } from 'redux';
 
-import authReducer from './ducks/auth';
+import discoveryListReducer from './ducks/discoveryList';
+
+const combineDiscovery = combineReducers({
+    list: discoveryListReducer,
+})
 
 const reducers = combineReducers({
-    auth: authReducer,
+    discovery: combineDiscovery,
 });
 
 export default reducers;
