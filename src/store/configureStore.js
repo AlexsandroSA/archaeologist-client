@@ -1,9 +1,7 @@
 import { applyMiddleware, createStore, compose } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import thunk from 'redux-thunk';
-import logger from 'redux-logger';
 
 import rootReducer from './reducers';
 
@@ -14,13 +12,11 @@ const persistConfig = {
 };
 
 function getMiddlewares() {
-  return process.env.NODE_ENV === 'development' ? [logger, thunk] : [thunk];
+  return [thunk];
 }
 
 function getComposedEnhancers(enhancers) {
-  return process.env.NODE_ENV === 'development'
-    ? composeWithDevTools(...enhancers)
-    : compose(...enhancers);
+  return compose(...enhancers);
 }
 
 export default function configureStore(preloadedState = {}) {
