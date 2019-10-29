@@ -1,11 +1,12 @@
 import api from '../api';
+import { envManager } from '../../utils/helpers';
 import { GET, DELETE, POST } from '../httpMethods';
 import { toApi, fromApi } from '../dto/discoveries.dto';
 
 export const getDiscoveries = async () => {
     const { data } = await api({
         method: GET,
-        url: 'http://localhost:3000/api/discoveries',
+        url: `${envManager.urlApi}/discoveries`,
     });
 
     const response = fromApi(data);
@@ -16,7 +17,7 @@ export const getDiscoveries = async () => {
 export const getDiscoveriesById = async (id) => {
     const { data } = await api({
         method: GET,
-        url: `http://localhost:3000/api/discoveries/${id}`,
+        url: `${envManager.urlApi}/discoveries/${id}`,
     });
 
     return data;
@@ -25,7 +26,7 @@ export const getDiscoveriesById = async (id) => {
 export const createDiscovery = async (body) => {
     const { data } = await api({
         method: POST,
-        url: `http://localhost:3000/api/discoveries/`,
+        url: `${envManager.urlApi}/discoveries/`,
         data: toApi(body),
     });
 
@@ -36,7 +37,7 @@ export const createDiscovery = async (body) => {
 export const deleteDiscovery = async (id) => {
     const { data } = await api({
         method: DELETE,
-        url: `http://localhost:3000/api/discoveries/${id}`,
+        url: `${envManager.urlApi}/discoveries/${id}`,
     });
 
     return data;
