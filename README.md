@@ -1,6 +1,6 @@
 # archaeologist-client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Demo: [https://archaeologist-client.herokuapp.com/](https://archaeologist-client.herokuapp.com/)
 
 ## Available Scripts
 
